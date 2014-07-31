@@ -47,7 +47,7 @@ gulp.task('webpack:build', function(callback) {
 
   myConfig.plugins = myConfig.plugins.concat(
     new webpack.DefinePlugin({
-      'process.eng': {
+      'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
