@@ -12,14 +12,15 @@ gulp.task('default', ['webpack-dev-server'], function() {});
 
 gulp.task('webpack-dev-server', function() {
   new WebpackDevServer(webpack(webpackConfig), {
-    contentBase: 'src/index.html',
-    publicPath: '/' + webpackConfig.output.publicPath
-  }).listen(8080, 'localhost', function(err) {
+    contentBase: 'src/',
+    publicPath: '/' + webpackConfig.output.publicPath,
+    hot: true
+    }).listen(8585, 'localhost', function(err) {
     if (err) {
       throw new gutil.PluginError('webpack-dev-server', err);
     }
 
-    gutil.log('[webpack-dev-server]', 'http://localhost:8080/webpack-dev-server/');
+    gutil.log('[webpack-dev-server]', 'http://localhost:8585/webpack-dev-server/');
   });
 });
 
